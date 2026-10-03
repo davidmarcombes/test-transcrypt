@@ -17,6 +17,24 @@ sudo ln -s ${PWD}/transcrypt /usr/local/bin/transcrypt
 
 ## Windows
 
+Windows installation require git for windows to be installed and access to git bash
+
+
+Download in the same way as above
+
+**Copy** to ```:usr:bin/```
+
++ Open a git bash prompt with admin privilege
++ Use cp to copy
++ Check transcrypt in path
+
+```sh
+cp /c/work/repos/transcrypt/transcrypt /usr/bin/transcrypt
+transcrypt --version
+``` 
+
+Assuming you have clone the transcrypt repo in ```C:/work/repos/transcrypt```
+
 
 ## Initialising repo
 
@@ -110,3 +128,33 @@ Copy and paste the following command to initialize a cloned repository:
 
   transcrypt -c aes-256-cbc -p 'ThisMoodNeedsARestart'
 ```
+
+On clone side just execute the following on a clean repo clone
+
+```
+transcrypt -c aes-256-cbc -p 'ThisMoodNeedsARestart'
+```
+
+(If running on windows you have to do this under git bash)
+
+The prompt answer should look like
+
+```
+Repository metadata:
+
+  GIT_WORK_TREE:  E:/Code/test-transcrypt
+  GIT_DIR:        /e/code/test-transcrypt/.git
+  GIT_ATTRIBUTES: E:/Code/test-transcrypt/.gitattributes
+
+The following configuration will be saved:
+
+  CONTEXT:  default
+  CIPHER:   aes-256-cbc
+  PASSWORD: ThisMoodNeedsARestart
+
+Does this look correct? [Y/n]
+
+The repository has been successfully configured by transcrypt.
+```
+
+And the crypted files should now be visible
